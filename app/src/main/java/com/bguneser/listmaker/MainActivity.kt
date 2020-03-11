@@ -1,18 +1,14 @@
 package com.bguneser.listmaker
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.InputType
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.microsoft.appcenter.AppCenter
+import com.microsoft.appcenter.analytics.Analytics
+import com.microsoft.appcenter.crashes.Crashes
 import kotlinx.android.synthetic.main.activity_main.*
+//import sun.jvm.hotspot.utilities.IntArray
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         Navigation.findNavController(this,R.id.nav_host_fragment)
+
+        AppCenter.start(
+            application, "1b0bd7c5-2270-4ecf-9a32-1a793b8acff7",
+            Analytics::class.java, Crashes::class.java
+        )
     }
 
     override fun onBackPressed() {

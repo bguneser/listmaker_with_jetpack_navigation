@@ -1,8 +1,11 @@
 package com.bguneser.listmaker
 
+import com.microsoft.appcenter.espresso.Factory
+import org.junit.After
+import org.junit.Assert.assertEquals
+import org.junit.Rule
 import org.junit.Test
 
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -13,5 +16,13 @@ class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Rule
+    var reportHelper = Factory.getReportHelper()
+
+    @After
+    fun TearDown() {
+        reportHelper.label("Stopping App")
     }
 }

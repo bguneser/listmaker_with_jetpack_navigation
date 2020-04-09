@@ -1,6 +1,7 @@
 package com.bguneser.listmaker
 
 import com.microsoft.appcenter.espresso.Factory
+import com.microsoft.appcenter.espresso.Factory.*
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -19,7 +20,7 @@ class ExampleUnitTest {
     }
 
     @Rule
-    var reportHelper = Factory.getReportHelper()
+    var reportHelper = getReportHelper()
 
     @After
     fun TearDown() {

@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         Navigation.findNavController(this,R.id.nav_host_fragment)
 
         AppCenter.start(
-            application, "1b0bd7c5-2270-4ecf-9a32-1a793b8acff7",
+            application, "77ac796f-ee26-47e7-b3c3-ab24b67736a0",
             Analytics::class.java, Crashes::class.java
         )
     }
